@@ -1,0 +1,40 @@
+<nav class="navbar row">
+    <div class="col-12 col-md-3">
+      <div class="navbar-brand">
+        <a routerLink="/"><img width="150px" src="/assets/images/logo.png" /></a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 mt-2 mt-md-0">
+      <div class="input-group">
+        <input
+          type="text"
+          id="search_field"
+          class="form-control"
+          placeholder="Enter Product Name ..."
+          [(ngModel)]="searchText"
+          (input)="clearSearch()"
+          (keydown.enter)="searchByEnterKey()"
+        />
+        <div class="input-group-append">
+          <button (click)="search()" id="search_btn" class="btn">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-3 mt-4 mt-md-0 text-center">
+      <a routerLink="/cart">
+        <span id="cart" class="ml-3">Cart</span>
+        <span class="ml-1" id="cart_count">{{cartCount}}</span>
+      </a>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+
+<footer class="py-1">
+    <p class="text-center text-dark mt-1">
+        JVLcart - 2022-2023, All Rights Reserved
+    </p>
+</footer>
